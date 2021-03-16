@@ -107,10 +107,10 @@ const users = [
 ]
 
 function printNameAndPhones(arr) {
-  arr.forEach(function(element, idx) {
-    console.log(arr[idx].name)
-    console.log(`Cell: ${arr[idx].phones.cell}`)
-    console.log(`Office: ${arr[idx].phones.office}`)
+  arr.forEach(function(element) {
+    console.log(element.name)
+    console.log(`Cell: ${element.phones.cell}`)
+    console.log(`Office: ${element.phones.office}`)
   })
 }
 
