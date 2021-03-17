@@ -28,7 +28,7 @@ console.log(name)
 console.log("%cQuestion 3", "color: red") 
 function drinkWater (thirstLevel) {
   console.log("Man I sure am thirsty")
-  newThirstLevel = thirstLevel - 1
+  let newThirstLevel = thirstLevel - 1
   console.log("Ahh that hits the spot")
   return newThirstLevel
 }
@@ -174,7 +174,7 @@ const line = []
 
 let ticketNumber = 0
 function takeATicketNumber(line){
-  ticketNumber++
+  ticketNumber += 1
   line.push(ticketNumber)
   return `Welcome. You are ticket number ${ticketNumber}`
 }
