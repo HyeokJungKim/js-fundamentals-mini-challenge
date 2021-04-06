@@ -158,9 +158,9 @@ console.log("%c----------", "color: red")
 // ***** Scope & Closures *****
 
 function takeATicketNumber(line) {
-  line.push(++nextTicket)
+  line.push(line.length)
 
-  return `Welcome. You are ticket number ${nextTicket}`
+  return `Welcome. You are ticket number ${line[0]}`
 }
 
 function nowServing(line) {
@@ -200,7 +200,16 @@ console.log("%c----------", "color: red")
 // *** Uncomment the lines below to test
 console.log("%cScope & Closures - Question 2", "color: red")
 
+function ticketNumberGeneratorFunc(currentLine) {
+  return function takeATicketNumber(line) {
+          line.push(++nextTicket)
+  
+          return `Welcome. You are ticket number ${nextTicket}`
+        }
+}
+
 const newLine = []
+
 const takeATicketNumberFunc = ticketNumberGeneratorFunc()
 
 console.log(takeATicketNumberFunc(newLine))
