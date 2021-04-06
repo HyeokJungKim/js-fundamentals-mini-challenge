@@ -200,10 +200,6 @@ console.log("%c----------", "color: red")
 // *** Uncomment the lines below to test
 console.log("%cScope & Closures - Question 2", "color: red")
 
-function ticketNumberGeneratorFunc() {
-  return function takeATicketNumber()
-}
-
 const newLine = []
 const takeATicketNumberFunc = ticketNumberGeneratorFunc()
 
