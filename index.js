@@ -98,13 +98,25 @@ const users = [
   }
 ]
 
+// function printNameAndPhones(arr) {
+//   for (let ind in arr) {
+//     console.log(arr[ind].name);
+//     console.log("Cell: " + arr[ind].phones.cell);
+//     console.log("Office: " + arr[ind].phones.office);
+//   }
+// };
+
 function printNameAndPhones(arr) {
-  for (let ind in arr) {
-    console.log(arr[ind].name);
-    console.log("Cell: " + arr[ind].phones.cell);
-    console.log("Office: " + arr[ind].phones.office);
-  }
-};
+  console.log(arr[0].name);
+  console.log("Cell: " + arr[0].phones.cell);
+  console.log("Office: " + arr[0].phones.office);
+
+  console.log(arr[1].name);
+  console.log("Cell: " + arr[1].phones.cell);
+  console.log("Office: " + arr[1].phones.office);
+}
+
+
 
 printNameAndPhones(users)
 // => "Duane"
