@@ -99,10 +99,10 @@ const users = [
 ]
 
 function printNameAndPhones(array){
-  array.forEach(function(users){
-    console.log(users.name);
-    console.log(`Cell: ${users.phones.cell}`);
-    console.log(`Office: ${users.phones.office}`);
+  array.forEach(function(element){
+    console.log(element.name);
+    console.log(`Cell: ${element.phones.cell}`);
+    console.log(`Office: ${element.phones.office}`);
   });
 }
 printNameAndPhones(users)
@@ -177,10 +177,9 @@ const line = []
 // ***** Scope & Closures - Question 1 *****
 let ticketNumber = 0
 
-function takeATicketNumber(line){
- let ticket = ++ticketNumber
- line.push(ticket)
-return `Welcome. You are ticket number ${ticketNumber}`;
+function takeATicketNumber(customerLine){
+  customerLine.push(++ticketNumber)
+  return `Welcome. You are ticket number ${ticketNumber}`;
 }
 
 // *** Uncomment the lines below to test
@@ -201,7 +200,7 @@ console.log(nowServing(line))
 console.log(takeATicketNumber(line))
 // // => `Welcome. You are ticket number 3`
 
-// console.log("%c----------", "color: red") 
+console.log("%c----------", "color: red") 
 
 // ***** Scope & Closures - Question 2 *****
 // *** Uncomment the lines below to test
