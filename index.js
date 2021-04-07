@@ -223,17 +223,12 @@ console.log(takeATicketNumber(line))
 // => `Welcome. You are ticket number 2`
 
 function nowServing(line) {
-  if(line.length == 0) {
-    line.push(1)
-    return `Currently serving ${line}`;
-  }else {
-    for(let i = 0; i < line.length; i++) {
-        line.push(line[i] + 1);
-        i++;
-        return `Currently serving ${line[i]}`;
+    let count = 0;
+    while(count >= 0){
+      count++;
+      return`Currently serving ${line[count - 1]}.`
     }
-  }
-}
+   }
 
 console.log(nowServing(line))
 // => `Currently serving 1.`
@@ -248,23 +243,23 @@ console.log("%c----------", "color: red")
 
 // ***** Scope & Closures - Question 2 *****
 // *** Uncomment the lines below to test
-// console.log("%cScope & Closures - Question 2", "color: red")
+console.log("%cScope & Closures - Question 2", "color: red")
 
-// const newLine = []
-// const takeATicketNumberFunc = ticketNumberGeneratorFunc()
-// console.log(takeATicketNumberFunc(newLine))
-// // => `Welcome. You are ticket number 1`
+const newLine = []
+const takeATicketNumberFunc = ticketNumberGeneratorFunc()
+console.log(takeATicketNumberFunc(newLine))
+// => `Welcome. You are ticket number 1`
 
-// console.log(takeATicketNumberFunc(newLine))
-// // => `Welcome. You are ticket number 2`
+console.log(takeATicketNumberFunc(newLine))
+// => `Welcome. You are ticket number 2`
 
-// console.log(nowServing(newLine))
-// // => `Currently serving 1.`
+console.log(nowServing(newLine))
+// => `Currently serving 1.`
 
-// console.log(nowServing(newLine))
-// // => `Currently serving 2.`
+console.log(nowServing(newLine))
+// => `Currently serving 2.`
 
-// console.log(takeATicketNumberFunc(newLine))
-// // => `Welcome. You are ticket number 3`
+console.log(takeATicketNumberFunc(newLine))
+// => `Welcome. You are ticket number 3`
 
-// console.log("%c----------", "color: red") 
+console.log("%c----------", "color: red") 
