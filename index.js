@@ -105,15 +105,19 @@ const users = [
 
 function printNameAndPhones(a)
 {
-  for (const usd of a)
+  for (const info of a)  //  for ... of ... iterates of the values
   {
-    console.log(usd.name);
-    for (const objz in usd.phones)
+    console.log(info.name);
+    for (const comms in info.phones)  // for... in  .. it iterates over the keys
     { 
-      console.log(`${objz}: ${usd.phones[objz]}`);
+      console.log(`${comms}: ${info.phones[comms]}`);
     }
   }
 }
+
+
+
+
 
 printNameAndPhones(users);
 // => "Duane"
@@ -232,23 +236,12 @@ console.log("%c----------", "color: red")
 // *** Uncomment the lines below to test
 console.log("%cScope & Closures - Question 2", "color: red")
 
+
 const newLine = []
-
-
-
-
-
-
-function ticketNumberGeneratorFunc(newLine)
-{
-  function takeATicketNumber(x) {
-    let numb = x
-    
-    return `Welcome. Your ticket number ${numb}`
-  }
-  const takeATicketNumberFunc = ticketNumberGeneratorFunc();
-  newLine.push(takeATicketNumberFunc)
-}
+line.splice(0,2)
+numb = 0;
+console.log(line)
+const takeATicketNumberFunc = newLine => takeATicketNumber(newLine);
 
 console.log(takeATicketNumberFunc(newLine))
 // => `Welcome. You are ticket number 1`
