@@ -169,29 +169,11 @@ console.log("%c----------", "color: red")
 
 // ***** Scope & Closures *****
 
-// function takeANumber(line, name) {
-//   line.push(name)
+function takeANumber(line, name) {
+  line.push(name)
 
-//   return `Welcome, ${name}. You are number ${line.length} in line.`
-// }
-
-// function nowServing(line) {
-//   if (!line.length) {
-//     return "There is nobody waiting to be served!"
-//   }
-//   return `Currently serving ${line.shift()}.`
-// }
-
-// const line = []
-
-// ***** Scope & Closures - Question 1 *****
-
-let line = [];
-
-function takeATicketNumber(line) {
-  line.push(line.length + 1);
-  return `Welcome. You are ticket number ${line.length}`
-} 
+  return `Welcome, ${name}. You are number ${line.length} in line.`
+}
 
 function nowServing(line) {
   if (!line.length) {
@@ -200,7 +182,16 @@ function nowServing(line) {
   return `Currently serving ${line.shift()}.`
 }
 
+const line = []
 
+// ***** Scope & Closures - Question 1 *****
+let ticket = [];
+
+function takeATicketNumber(line) {
+  lineSpot = ++ticket 
+  line.push(lineSpot);
+  return `Welcome. You are ticket number ${lineSpot}`
+} 
 
 // *** Uncomment the lines below to test
 console.log("%cScope & Closures - Question 1", "color: red")
