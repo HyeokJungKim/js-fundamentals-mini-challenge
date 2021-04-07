@@ -97,17 +97,21 @@ function myMap(array, callback) {
   return result
 }
 
+function triple(num){
+  return num * 3
+}
+
 // ***** Callbacks - Question 1 *****
 
 // *** Uncomment the lines below to test
-// console.log("%cCallbacks - Question 1", "color: red")
+console.log("%cCallbacks - Question 1", "color: red")
 
-// console.log(myMap([1,2,3,4,5], triple)) 
+console.log(myMap([1,2,3,4,5], triple)) 
 // // => [3,6,9,12,15]
 
-// console.log(myMap([2,4,6,8], triple))   
+console.log(myMap([2,4,6,8], triple))   
 // // => [6,12,18,24]
-// console.log("%c----------", "color: red") 
+console.log("%c----------", "color: red") 
 
 
 // ***** Callbacks - Question 2 *****
@@ -141,44 +145,60 @@ const line = []
 
 
 // *** Uncomment the lines below to test
-// console.log("%cScope & Closures - Question 1", "color: red")
+console.log("%cScope & Closures - Question 1", "color: red")
 
-// console.log(takeATicketNumber(line))
+let number = 0
+
+function takeATicketNumber(lineArr){
+  number += 1
+  lineArr.push(number)
+  return `Welcome, you are ticket number ${number}`
+}
+
+console.log(takeATicketNumber(line))
 // // => `Welcome. You are ticket number 1`
 
-// console.log(takeATicketNumber(line))
+console.log(takeATicketNumber(line))
 // // => `Welcome. You are ticket number 2`
 
-// console.log(nowServing(line))
+console.log(nowServing(line))
 // // => `Currently serving 1.`
 
-// console.log(nowServing(line))
+console.log(nowServing(line))
 // // => `Currently serving 2.`
 
-// console.log(takeATicketNumber(line))
+console.log(takeATicketNumber(line))
 // // => `Welcome. You are ticket number 3`
 
-// console.log("%c----------", "color: red") 
+console.log("%c----------", "color: red") 
 
 // ***** Scope & Closures - Question 2 *****
 // *** Uncomment the lines below to test
 // console.log("%cScope & Closures - Question 2", "color: red")
 
-// const newLine = []
-// const takeATicketNumberFunc = ticketNumberGeneratorFunc()
-// console.log(takeATicketNumberFunc(newLine))
+function ticketNumberGeneratorFunc(){
+  let insideNum = 0
+  return function(line){
+    insideNum += 1
+    line.push(insideNum)
+    return `Welcome, you are ticket number $(insideNum).`
+  }
+}
+const newLine = []
+const takeATicketNumberFunc = ticketNumberGeneratorFunc()
+console.log(takeATicketNumberFunc(newLine))
 // // => `Welcome. You are ticket number 1`
 
-// console.log(takeATicketNumberFunc(newLine))
+console.log(takeATicketNumberFunc(newLine))
 // // => `Welcome. You are ticket number 2`
 
-// console.log(nowServing(newLine))
+console.log(nowServing(newLine))
 // // => `Currently serving 1.`
 
-// console.log(nowServing(newLine))
+console.log(nowServing(newLine))
 // // => `Currently serving 2.`
 
-// console.log(takeATicketNumberFunc(newLine))
+console.log(takeATicketNumberFunc(newLine))
 // // => `Welcome. You are ticket number 3`
 
-// console.log("%c----------", "color: red") 
+console.log("%c----------", "color: red") 
